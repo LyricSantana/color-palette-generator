@@ -80,7 +80,7 @@ function rgbToHex({r, g, b}) {
 // Generate 15-color palette (warmer, base, cooler)
 function generatePalette(hsl) {
     const {h, s, l} = hsl;
-    const hueShift = 0.03;
+    const hueShift = 0.02;
 
     const top = [
         {h: h+hueShift, s, l: Math.min(1, l+0.25)},

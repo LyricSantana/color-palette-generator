@@ -1,19 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8" />
-    <title>Color Palette Generator</title>
-</head>
 <body>
-    <h1>Color Palette Generator</h1>
-    <label>
-        Base color:
+<link rel="stylesheet" href="style.css" />
+  <div class="page">
+    <div class="container">
+      <h1>Color Palette Generator</h1>
+
+      <div class="controls">
+        <label for="baseColor">Base color:</label>
         <input type="color" id="baseColor" value="#000000" />
-    </label>
+
+        <label for="copyFormat">Copy format:</label>
+        <select id ="copyFormat">
+            <option value="hex" selected>HEX</option>
+            <option value="rgb">RGB</option>
+            <option value="hsl">HSL</option>
+        </select>
+        <button id="copyLink" class="button">Copy Palette Link</button>
+        <div class="export-buttons">
+        </div>
+        
+        <label class="toggle">
+            <input type="checkbox" id="showValues" checked />
+            Show color values
+        </label>
+    </div>
+    <button id="exportJson" class="button">Export JSON</button>
+    <button id="exportCss" class="button">Export CSS</button>
+    <button id="exportPng" class="button">Export PNG</button>
+    <label for="warmth">Row difference:</label>
+    <input type="range" id="warmth" class="warmth-slider" min="0" max="100" value="50">
+    <span id="warmthValue">50%</span>
+
     
-    <div id="palette" class="palette-grid"></div>
-    
-    <script src="script.js"></script>
+      <p class="hint">Click on any color to copy its HEX/RGB/HSL value</p>
+
+      <div id="palette" class="palette-grid"></div>
+    </div>
+
+    <footer class="credits">
+      <p>Made by <strong>Lyric S · </strong> Built for artists and designers</p>
+      <p>Part of Hack Club Flavortown <strong>·</strong> Open source on GitHub</p>
+    </footer>
+  </div>
+
+  <div id="toast">HEX copied to clipboard</div>
+  <script src="script.js"></script>
 </body>
-</html>

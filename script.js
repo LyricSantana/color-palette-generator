@@ -80,11 +80,11 @@ function rgbToHex({r, g, b}) {
 // Generate 15-color palette (warmer, base, cooler)
 function generatePalette(hsl) {
     const {h, s, l} = hsl;
-    const hueShift = 0.05;
+    const hueShift = 0.075;
 
     const top = [
-        {h: h+hueShift, s, l: Math.min(1, l+0.25)},
-        {h: h+hueShift, s, l: Math.min(1, l+0.15)},
+        {h: h+hueShift, s, l: Math.min(1, l+0.2)},
+        {h: h+hueShift, s, l: Math.min(1, l+0.1)},
         {h: h+hueShift, s, l: l},
         {h: h+hueShift, s, l: Math.max(0, l-0.1)},
         {h: h+hueShift, s, l: Math.max(0, l-0.2)}
@@ -99,8 +99,8 @@ function generatePalette(hsl) {
     ];
 
     const bottom = [
-        {h: h-hueShift, s, l: Math.min(1, l+0.25)},
-        {h: h-hueShift, s, l: Math.min(1, l+0.15)},
+        {h: h-hueShift, s, l: Math.min(1, l+0.2)},
+        {h: h-hueShift, s, l: Math.min(1, l+0.1)},
         {h: h-hueShift, s, l: l},
         {h: h-hueShift, s, l: Math.max(0, l-0.1)},
         {h: h-hueShift, s, l: Math.max(0, l-0.2)}
